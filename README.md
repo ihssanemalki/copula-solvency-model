@@ -1,5 +1,4 @@
 # Copula Solvency Model
-
 Modeling multivariate insurance risks using copula theory and Monte Carlo simulation.
 
 ---
@@ -7,7 +6,6 @@ Modeling multivariate insurance risks using copula theory and Monte Carlo simula
 ## 🇬🇧 English Description
 
 This project studies the dependence structure between multiple non-life insurance branches using copula models and vine copulas.
-
 The objective is to estimate the solvency capital requirement of an insurer while accounting for nonlinear and tail dependencies between risks.
 
 The methodology combines:
@@ -29,24 +27,23 @@ The final dataset contains monthly aggregated insurance claims from 1992–2006.
 
 ## 🇫🇷 Description Française
 
-Ce projet étudie la structure de dépendance entre plusieurs branches d’assurance non-vie à l’aide des copules et des vine copules.
-
-L’objectif est d’estimer le besoin en fonds propres d’un assureur tout en tenant compte des dépendances non linéaires et des dépendances de queue entre les risques.
+Ce projet étudie la structure de dépendance entre plusieurs branches d'assurance non-vie à l'aide des copules et des vine copules.
+L'objectif est d'estimer le besoin en fonds propres d'un assureur tout en tenant compte des dépendances non linéaires et des dépendances de queue entre les risques.
 
 La méthodologie combine :
-- L’ajustement des lois marginales
-- L’analyse des dépendances via le Tau de Kendall et le Rho de Spearman
+- L'ajustement des lois marginales
+- L'analyse des dépendances via le Tau de Kendall et le Rho de Spearman
 - La sélection de copules bivariées
 - La modélisation par Vine Copule
 - La simulation Monte Carlo
-- L’estimation de la VaR et de la TVaR
+- L'estimation de la VaR et de la TVaR
 
 Les données proviennent du package R `CASdatasets` et combinent :
 - `freclaimset3multi9207`
 - `freclaimset3fire9207`
 - `freclaimset3dam9207`
 
-Le jeu de données final contient des charges sinistres mensuelles agrégées sur la période 1992–2006. :contentReference[oaicite:0]{index=0}
+Le jeu de données final contient des charges sinistres mensuelles agrégées sur la période 1992–2006.
 
 ---
 
@@ -57,10 +54,13 @@ data/       -> datasets and processed data
 figures/    -> generated plots and visualizations
 report/     -> actuarial report and documentation
 src/        -> Python source code
+```
+
+---
+
 ## Source Code
 
 ### `simulation_visualization.py`
-
 Generates graphical visualizations related to:
 - Dependence structures between insurance branches
 - Copula behavior and tail dependence
@@ -72,7 +72,6 @@ Generates graphical visualizations related to:
 ---
 
 ### `solvency_calculations.py`
-
 Performs the numerical actuarial computations of the project, including:
 - Marginal distribution fitting
 - Dependence measurement using Kendall's Tau and Spearman's Rho
@@ -100,7 +99,6 @@ Performs the numerical actuarial computations of the project, including:
 ## Tools & Libraries
 
 ### Python
-
 - `numpy`
 - `scipy`
 - `pandas`
@@ -109,7 +107,6 @@ Performs the numerical actuarial computations of the project, including:
 - `pyvinecopulib`
 
 ### R
-
 - `CASdatasets`
 - `copula`
 
