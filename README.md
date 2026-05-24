@@ -123,6 +123,9 @@ The Gumbel copula was selected for Storm ↔ Property Damage and Property Damage
 - 100,000 simulated scenarios
 - Mean aggregated monthly loss: **49.89 M€**
 - Monthly standard deviation: **21.93 M€**
+  ## Monte Carlo Risk Distribution
+
+![Risk Distribution](figures/fig6_distribution_agregee.png)
 
 ### Capital Requirement Estimation
 
