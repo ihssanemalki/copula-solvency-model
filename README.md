@@ -85,14 +85,109 @@ Performs the numerical actuarial computations of the project, including:
 
 ---
 
-## Main Results
+## 📊 Key Results / Résultats Clés
 
-- 14 statistically significant dependence pairs identified
-- Gumbel copulas selected for extreme-event insurance branches
-- Vine copula model constructed for joint 8-risk dependence modeling
-- 100,000 Monte Carlo simulations performed
-- Solvency capital estimated using VaR and TVaR risk measures
-- Diversification effects quantified through dependence modeling
+### 🇬🇧 Main Findings
+
+- 180 monthly observations covering 8 insurance business lines
+- 28 dependence pairs analyzed using Kendall's Tau and Spearman's Rho
+- 14 statistically significant dependence structures detected
+- Strongest dependence observed between:
+  - Storm ↔ Property Damage (Kendall τ = 0.291)
+  - Fire ↔ Large Fire Claims (Kendall τ = 0.246)
+
+### Marginal Distribution Modeling
+
+- Lognormal distribution selected for 7 out of 8 insurance branches
+- Gamma distribution selected for Large Fire Claims
+- Model selection performed using MLE, AIC, and Kolmogorov-Smirnov tests
+
+### Copula Selection Results
+
+| Pair Type | Selected Copula |
+|---|---|
+| Extreme upper-tail dependence | Gumbel |
+| Lower-tail dependence | Clayton |
+| Symmetric central dependence | Frank |
+| Elliptical dependence | Gaussian |
+
+The Gumbel copula was selected for Storm ↔ Property Damage and Property Damage ↔ Large Damage Claims, confirming upper-tail dependence during extreme climatic events.
+
+### Vine Copula Model
+
+- 8-dimensional Vine Copula — truncation level: 2
+- Joint multivariate dependence modeled via pair-copula decomposition
+
+### Monte Carlo Simulation
+
+- 100,000 simulated scenarios
+- Mean aggregated monthly loss: **49.89 M€**
+- Monthly standard deviation: **21.93 M€**
+
+### Capital Requirement Estimation
+
+| Confidence Level | VaR (M€) | TVaR (M€) |
+|---|---|---|
+| 95% | 88.68 | 111.62 |
+| 99% | 123.51 | 155.16 |
+| 99.5% | 140.38 | 179.61 |
+| 99.9% | 198.96 | 255.07 |
+
+### Diversification Effect
+
+Copula-based dependence modeling quantified diversification gains ranging from **12% at the 90% confidence level** up to **32% at the 99.9% confidence level**, demonstrating the importance of realistic dependence modeling in solvency capital estimation.
+
+---
+
+### 🇫🇷 Principaux Résultats
+
+- 180 observations mensuelles couvrant 8 branches d'assurance
+- 28 paires de dépendance analysées via le Tau de Kendall et le Rho de Spearman
+- 14 dépendances statistiquement significatives détectées
+- Les dépendances les plus fortes concernent :
+  - Tempête ↔ Dommages (τ = 0.291)
+  - Incendie ↔ Gros Incendies (τ = 0.246)
+
+### Ajustement des Lois Marginales
+
+- La loi Lognormale est retenue pour 7 garanties sur 8
+- La loi Gamma est retenue pour les Gros Incendies
+- Sélection réalisée via MLE, critère AIC et tests KS de Kolmogorov-Smirnov
+
+### Résultats de Sélection des Copules
+
+| Type de dépendance | Copule retenue |
+|---|---|
+| Dépendance de queue supérieure | Gumbel |
+| Dépendance de queue inférieure | Clayton |
+| Dépendance centrale symétrique | Frank |
+| Dépendance elliptique | Gaussienne |
+
+La copule de Gumbel est sélectionnée pour Tempête ↔ Dommages et Dommages ↔ Gros Dommages, confirmant la présence d'une dépendance de queue supérieure lors des événements climatiques extrêmes.
+
+### Modèle Vine Copule
+
+- Modèle Vine Copule de dimension 8 — niveau de troncature : 2
+- Structure jointe multivariée modélisée via décomposition pair-copula
+
+### Simulation Monte Carlo
+
+- 100 000 scénarios simulés
+- Charge mensuelle agrégée moyenne : **49.89 M€**
+- Écart-type mensuel : **21.93 M€**
+
+### Estimation du Besoin en Fonds Propres
+
+| Niveau de confiance | VaR (M€) | TVaR (M€) |
+|---|---|---|
+| 95% | 88.68 | 111.62 |
+| 99% | 123.51 | 155.16 |
+| 99.5% | 140.38 | 179.61 |
+| 99.9% | 198.96 | 255.07 |
+
+### Effet de Diversification
+
+La modélisation par copules met en évidence des gains de diversification allant de **12% au seuil 90%** jusqu'à **32% au seuil 99.9%**, soulignant l'importance d'une modélisation réaliste des dépendances dans l'estimation du capital de solvabilité.
 
 ---
 
@@ -109,6 +204,14 @@ Performs the numerical actuarial computations of the project, including:
 ### R
 - `CASdatasets`
 - `copula`
+
+---
+
+## Data Source
+
+Datasets originate from the `CASdatasets` package by Arthur Charpentier et al.
+R preprocessing pipeline: `src/data_preprocessing.R`
+Package: https://dutangc.perso.math.cnrs.fr/RRepository/pub/
 
 ---
 
